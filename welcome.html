@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome - Programming Quiz</title>
+    <style>
+        /* Full-page black background */
+        body {
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Centered white box */
+        .quiz-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+            text-align: center;
+            width: 350px;
+        }
+
+        /* Headings */
+        h1 {
+            color: #007BFF;
+        }
+
+        h4 {
+            color: black;
+            margin-bottom: 10px;
+			text-align: left;
+        }
+
+        /* Dropdown styling */
+        select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        select:hover, select:focus {
+            border-color: #007BFF;
+            box-shadow: 0px 0px 8px rgba(0, 123, 255, 0.5);
+            outline: none;
+        }
+
+        /* Start Quiz button */
+        .start-btn {
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            box-shadow: 0px 4px 6px rgba(0, 123, 255, 0.3);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .start-btn:hover {
+            background-color: #0056b3;
+            box-shadow: 0px 4px 12px rgba(0, 123, 255, 0.6);
+        }
+    </style>
+    <script>
+        function updateTopics() {
+            var language = document.getElementById("language").value;
+            var topics = document.getElementById("topic");
+
+            // Clear existing options
+            topics.innerHTML = "";
+
+            if (language === "c") {
+                topics.innerHTML = `
+                    <option value="cbasics.php">Basics</option>
+                    <option value="cpointers.php">Pointers</option>
+                    <option value="cdata.php">Data Structures</option>
+                `;
+            } else if (language === "java") {
+                topics.innerHTML = `
+                    <option value="javabasics.php">Basics</option>
+                    <option value="javaoop.php">OOP</option>
+                    <option value="javaadvanced.php">Advanced</option>
+                `;
+            } else if (language === "python") {
+                topics.innerHTML = `
+                    <option value="pythonbasics.php">Basics</option>
+                    <option value="pythonadvanced.php">Advanced</option>
+                    <option value="pythonoop.php">OOP</option>
+                `;
+            }
+        }
+
+        function startQuiz() {
+            var selectedTopic = document.getElementById("topic").value;
+            if (selectedTopic) {
+                window.location.href = selectedTopic;
+            } else {
+                alert("Please select a topic.");
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <div class="quiz-container">
+        <h1>Programming Quiz</h1>
+        <h4>Select Language</h4>
+        
+        <select id="language" onchange="updateTopics()">
+            <option value="" disabled selected>Select Language</option>
+            <option value="c">C</option>
+            <option value="java">Java</option>
+            <option value="python">Python</option>
+        </select>
+
+        <h4>Select Topic</h4>
+        
+        <select id="topic">
+            <option value="" disabled selected>Select a language first</option>
+        </select>
+
+        <button class="start-btn" onclick="startQuiz()">Start Quiz</button>
+    </div>
+
+</body>
+</html>
