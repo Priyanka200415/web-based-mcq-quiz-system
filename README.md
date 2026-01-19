@@ -18,7 +18,7 @@ This project allows users to test their programming knowledge in **C, Java, and 
 ## Developed By
 
 - **Priyanka Priyadarsani Das (UCSE23042)**
-
+- **Ishika Bandopadhyay (UCSE23027)**
 ---
 
 ## Objective
