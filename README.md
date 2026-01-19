@@ -29,6 +29,14 @@ This project allows users to test their programming knowledge in **C, Java, and 
 - To store user scores for future reference  
 
 ---
+## Contribution
+
+- Assisted in integrating frontend with PHP backend
+- Worked with MySQL to store and retrieve quiz questions and user scores
+- Improved responsiveness and cross-browser compatibility  
+- Assisted in testing and debugging quiz functionality 
+
+---
 
 ## Features
 
